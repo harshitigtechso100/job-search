@@ -4,6 +4,7 @@ const { emailSender } = require('../utils/emailSender');
 const { handleError, handleResponse } = require('../utils/helper');
 
 
+// filter your salary
 exports.filterSalary = async (req,res) => {
     const {min,max,Titel,location} = req.body
     try{
@@ -37,7 +38,6 @@ exports.filterSalary = async (req,res) => {
         return
       }
       if(jobs){
-       // handleResponse(res,jobs,200)
        const user = req.user
        let userDetails
        if(user){
@@ -56,6 +56,8 @@ exports.filterSalary = async (req,res) => {
     }
 }
 
+
+// add new job 
 exports.addJob = async (req,res) => {
     const {jobpost, Titel, Company, Location,  Salary, userid} = req.body
     if(req.user){
@@ -83,6 +85,9 @@ exports.addJob = async (req,res) => {
       handleError(res,'error')
     }
 }
+
+
+// save job form student side
 exports.saveJob = async (req,res) => {
     if(req.user){
         const id = req.params.id
@@ -102,6 +107,8 @@ exports.saveJob = async (req,res) => {
     }
 }
 
+
+// list all jobs
 exports.myJob = async(req,res) => {
   if(req.user){
     const userid = req.user._id
@@ -127,6 +134,8 @@ exports.myJob = async(req,res) => {
   }
 }
 
+
+// remove job from student side
 exports.remove = async(req,res) => {
   if(req.user){
     const id = req.params.id
@@ -140,6 +149,8 @@ exports.remove = async(req,res) => {
     }
   }
 }
+
+// delete job
 exports.deleteJob = async(req,res) =>{
   try{
     const id = req.params.id

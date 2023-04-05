@@ -3,7 +3,6 @@ const router = express.Router()
 const passport = require('passport')
 
 
-
 router.get('/google', (req, res, next) => {
       req.session.google_oauth2_state = Math.random().toString(36).substring(2);
       next();
@@ -14,6 +13,8 @@ router.get('/google', (req, res, next) => {
       state: true,
     })
 )
+
+
 router.get('/facebook', (req, res, next) => {
     req.session.Session = Math.random().toString(36).substring(2);
     next();
@@ -24,11 +25,14 @@ router.get('/facebook', (req, res, next) => {
   
 )
 
+
 router.get( '/callback',      
     passport.authenticate( 'google', {
         successRedirect: '/',
         failureRedirect: '/'
 }))
+
+
 router.get('/facebook/callback',
   passport.authenticate('facebook', {
     successRedirect: '/',

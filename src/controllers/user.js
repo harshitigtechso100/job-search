@@ -1,14 +1,15 @@
-const User = require("../models/user")
-const Token = require("../models/token")
 const crypto = require("crypto")
 const md5 = require("md5")
-const {
-  checkForAuthenticationCookie,
-} = require("../middlewares/authentication");
+
+const User = require("../models/user")
+const Token = require("../models/token")
+
 const { createTokenForUser } = require("../services/authetication")
 const { emailSender } = require('../utils/emailSender')
 const {handleError,handleResponse} = require('../utils/helper')
 
+
+// user signup
 exports.userSignup = async (req, res) => {
   const { name, email, password, TYPE } = req.body;
   if (!name || !email || !password) {
@@ -36,6 +37,7 @@ exports.userSignup = async (req, res) => {
   }
 }
 
+// user signin
 exports.userSignin = async (req, res) => {
   const { email, password } = req.body
   if(!email){
@@ -64,6 +66,8 @@ exports.userSignin = async (req, res) => {
   }
 }
 
+
+// user logout
 exports.userLogout = async (req, res) => {
    res.clearCookie("google-auth-session")
    res.clearCookie("google-auth-session.sig")
@@ -78,6 +82,8 @@ exports.userLogout = async (req, res) => {
 
 }
 
+
+// forgot your password
 exports.forgotPassword = async (req,res) => {
   try{
     const {email} = req.body
@@ -101,6 +107,8 @@ exports.forgotPassword = async (req,res) => {
   } 
 }
 
+
+// reset your password
 exports.resetpassword = async(req, res) => {
   try{
     const user = await User.findById(req.params.userId);
