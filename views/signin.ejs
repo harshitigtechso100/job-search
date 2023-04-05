@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Sign IN</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+
+    <div class="container mt-4" style="
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 30%;
+    height: auto;
+    padding: 20px;
+    ">
+      <form action="/user/signin" method="post">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input type="text" name="email" class="form-control" id="email" />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <h5 style="text-align: center;">Signin With:</h5>
+      <button class="btn btn-light" style="margin-top: 20px; margin-left:75px ;"><a href='/auth/google'>Google</a></button>
+      <button class="btn btn-light" style="margin-top: 20px;"><a href='/auth/facebook'>Facebook</a></button>
+    </div>
+    <%- include('./partials/scripts') %>
+  </body>
+</html>

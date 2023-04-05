@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine Job Search</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%- include('./partials/head') %>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <h4 style="text-align: center;">My List</h4>
+      <div class="right-container"style="left: 20%; padding: 20px;">
+        <% if ( locals.myjobs) { %>
+            <% myjobs.forEach(job => { %>
+                <div class="bookDetails" >
+                    <h4> <a href="http://localhost:5000/job/remove/<%= job._id %>" class="bi bi-trash">⌧</a></h4>
+                    <h6>Title: <%= job.Titel %></h6>
+                    <h6>Company: <%= job.Company %></h6>
+                    <h6>Location: <%= job.Location %></h6>
+                    <h6>Salary: <%= job.Salary %></h6>
+                    <p>job Post: <%= job.jobpost %></p>
+                    <p style="color:blue;">Last Update: <%= job.updatedAt.toString().substr(0,15) %></p>
+                </div>
+             
+            <% }) %>
+                
+        <% } %>
+      </div>
+    <%- include('./partials/scripts') %>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<div>
+    <div class="addNewBook mt-4">
+        <% if (jobs) { %>
+            <% jobs.forEach(job => { %>
+                <div class="bookDetails">
+                    
+                    <% if (locals.user) { %>
+                        <% if (locals.user.TYPE === 'COMPANY') { %>
+                            <h4> <a href="http://localhost:5000/job/del/<%= job._id %>" class="bi bi-trash">⌧</a></h4>
+                        <% } else { %>
+                               <h4> <a href="http://localhost:5000/job/save/<%= job._id %>" class="bi bi-trash">✢</a></h4>
+                        <% } %>
+                    <% } %>
+                    <h6>Title: <%= job.Titel %></h6>
+                    <h6>Company: <%= job.Company %></h6>
+                    <h6>Location: <%= job.Location %></h6>
+                    <h6>Salary: <%= job.Salary %></h6>
+                    <p>job Post: <%= job.jobpost %></p>
+                    <p style="color:blue;">Last Update: <%= job.updatedAt.toString().substr(0,15) %></p>
+                </div>
+             
+            <% }) %>
+                
+        <% } %>
+    </div>
+</div>

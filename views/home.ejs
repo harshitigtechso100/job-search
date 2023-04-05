@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine Job Search</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%- include('./partials/head') %>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <div class="container mt-2">
+      <div class="left-container">
+        <h3 style="margin: 10px;">Filter</h3>
+        <div class="mt-4" style="padding: 10px;margin-bottom: 20px;">
+          <form method="post" action="/job/filter">
+            <div class="form-group" style="margin-bottom: 10px;">
+              <label for="exampleInputEmail1">Location</label>
+              <input type="text" class="form-control" name="location" id="location"  placeholder="Please Enter Location">
+            </div>
+            <div class="form-group" style="margin-bottom: 10px;">
+              <label for="exampleInputPassword1">Titel</label>
+              <input type="text" class="form-control" id="Titel"name="Titel" placeholder="Please Enter Titel">
+            </div>
+            <div class="form-group" style="margin-bottom: 10px;">
+              <label for="exampleInputPassword1">Salary</label>
+              <input type="number" class="form-control" id="min"name="min" placeholder="Please Enter Minimum Salary"style="margin-bottom: 10px;">
+              <input type="number" class="form-control" id="max"name="max" placeholder="Please Enter Maximum Salary">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+      </div>
+      </div>
+      <div class="right-container">
+        <%- include('./partials/homediv') %> 
+      </div>
+    <%- include('./partials/scripts') %>
+</body>
+</html>

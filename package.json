@@ -1,0 +1,35 @@
+{
+  "name": "job-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon inedx.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.0.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "helmet": "^6.0.1",
+    "jsonwebtoken": "^9.0.0",
+    "md5": "^2.3.0",
+    "mongoose": "^7.0.3",
+    "mongoose-findorcreate": "^4.0.0",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.22",
+    "passport": "^0.5.3",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth2": "^0.2.0",
+    "query-string": "^8.1.0",
+    "sib-api-v3-sdk": "^8.5.0",
+    "web-push": "^3.5.0"
+  }
+}

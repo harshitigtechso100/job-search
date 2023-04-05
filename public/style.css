@@ -1,0 +1,78 @@
+.left-container{
+    height: 525px;
+    width: 20%;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #ebe7e5;
+    margin-top: 20px;
+    position: absolute;
+    left: auto;
+}
+.right-container{
+    position: absolute;
+    height: 525px;
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #ebe7e5;
+    margin-top: 20px;
+    left: 25%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.buttons{
+    
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: aliceblue;
+    
+}
+.addNewBook{
+    margin: 30px;
+    padding: 10px 20px;
+}
+.formCustom{
+    margin: 10px;
+}
+.bookDetails{
+    height: auto;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #d8c4cb;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
